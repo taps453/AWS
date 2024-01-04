@@ -35,6 +35,7 @@
 ```bash
 Chmod 600
 ```
+
 chmod stand for "change mode"
 6 set read and write permissionfor the owner of the file
 0 set no permissionfor the grps or others
@@ -72,11 +73,8 @@ apt update
 ```
 
 
-
-
-
-
 <hr>
+
 <h3>VPC - Virtual Private Cloud </h3>
  VPC is a secure, isolated private cloud hosted within a public cloud.
 
@@ -107,23 +105,25 @@ Security grp added at EC2 instance level.
  
 <hr>
 
-<h3>Route 53</h3> - 
-<b>DNS(Domain name service) - maps domain name with ip address</b>
-<span>- Domain registration</span>
-<span>- DNS routing</span>
-<span>- Health checking -Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functiona</span>
+<h3>Route 53</h3>  
+<b>DNS[Domain name service] - maps domain name with ip address</b>
+
+- Domain registration
+- DNS routing
+- Health checking -Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functiona</span>
  
-<b>In gerneral - (DNS maps with Load balancer IP address)</b>
+<b>In gerneral - DNS maps with Load balancer IP address</b>
 
 <hr>
 
-<b>For connecting to a private subnet server we can use <i>"bastion-host"</i></b>
+- For connecting to a private subnet server we can use "bastion-host"
 <hr>
 
-<h3>Load balancer - </h3>
-<span>1- Application Load balancer</span>
-<span>2- Network load balancer</span>
-<span>3- Gateway load balancer</span>
+<h3>Load balancer </h3>
+
+- Application Load balancer</span>
+- Network load balancer</span>
+- Gateway load balancer</span>
 
 <hr>
 
@@ -139,57 +139,69 @@ Security grp added at EC2 instance level.
 
 <h3>AWS S3 - Simple storage service</h3>
 
-<b>Advantage - </b>
-<span>1- Availability and Durability</span>
-<span>2- Scalability</span>
-<span>3- Security</span>
-<span>4- Cost Effective</span>
-<span>5- Performance</span>
+<b>Advantage </b>
 
-<b>Security - </b>
-<span>1- Bucket policies</span>
-<span>2- Access control</span> 
-<span>3- Encryption</span>
+- Availability and Durability
+- Scalability
+- Security
+- Cost Effective
+- Performance
 
-<b>Storage Class -</b>
-<span>1- S3 Standard (least access time)</span>
-<span>2- S3 Standard-IA</span>
-<span>3- One Zone-IA</span>
-<span>4- S3 Glacier</span>
-<span>5- S3 Glacier Instant Retrieval</span>
-<span>6- S3 Glacier Flexible Retrieval</span>
-<span>7- S3 Glacier Deep Archive</span>
-<span>8- S3 Outposts</span>
-<span>9- S3 Intelligent Tiering</span>
+<b>Security</b>
+
+- Bucket policies
+- Access control
+- Encryption
+
+<b>Storage Class</b>
+
+- S3 Standard (least access time)
+- S3 Standard-IA
+- One Zone-IA
+- S3 Glacier
+- S3 Glacier Instant Retrieval
+- S3 Glacier Flexible Retrieval
+- S3 Glacier Deep Archive
+- S3 Outposts
+- S3 Intelligent Tiering
+
 <hr>
 
 <h3>IAC - Infracture as a code</h3> 
-<span>1- AWS CLI (Python utility)</span>
-<span>2- Terraform</span>
-<span>3- Cloud Formation</span>
-<span>4- CDK</span>
+
+- AWS CLI (Python utility)
+- Terraform
+- Cloud Formation
+- CDK
+
+
+### AWS CLI - use only for quick and short action
 
 ```bash
-AWS CLI - (use only for quick and short action)
+aws configure
+```
 
-aws configure 
+```bash
 aws s3 ls
 ```
 
-<h3>AWS CFT</h3> - Cloud formation template - Infrastructure as code-Ias
-<span>1- use to create lagre infrastructuer in aws</span>
-<span>2- act as a middle man b/w cloud and user</span>
-<span>3- CFT support Json and YMAL template.</span>
-<span>4- Convert templates into a API calls.</span>
+<h3>AWS CFT - Cloud formation template (Infrastructure as code-Ias)</h3>
 
- <b>CFT template writing style</b>
-<span> 1- Declarative </span>
- <span>2- Versioned</span>
+- use to create lagre infrastructuer in aws.
+- act as a middle man b/w cloud and user.
+- CFT support Json and YMAL template.
+- Convert templates into a API calls.
+
+### CFT template writing style
+
+- Declarative 
+- Versioned
  
-CFT job -
-<span>1- Creating Infra</span>
-<span>2- Drift Detection - configuration changes were made to your stack resources outside of CloudFormation via the AWS Management Console, CLI, and SDKs.</span>
-<span>3- Drift is the difference between the expected configuration values of stack resources defined in CloudFormation templates and the actual configuration values of these resources in the corresponding CloudFormation stacks.</span>
+### CFT job -
+
+- Creating Infra
+- Drift Detection - configuration changes were made to your stack resources outside of CloudFormation via the AWS Management Console, CLI, and SDKs.
+- Drift is the difference between the expected configuration values of stack resources defined in CloudFormation templates and the actual configuration values of these resources in the corresponding CloudFormation stacks.
 <hr>
 
 <h3>AWS Code Commit :</h3>
