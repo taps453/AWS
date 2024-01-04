@@ -2,10 +2,10 @@
 <li>Public</li>
 <li>Private</li>
 <li>Hybrid</li>
-<hr>
-<h2>AWS</h2>
 
-<h3>AWS IAM </h3> - (Identity and access management) - for Authentication and Authoritation
+<hr>
+
+<h3>AWS IAM </h3> Identity and access management - For Authentication and Authoritation
 
 - Users
 - Policies
@@ -13,35 +13,67 @@
 - Roles - created for temparory purpose
 
 <hr>
+
 <h3>AWS EC2 (Elastic Cloud Compute)</h3>
 
-<b>problems</b> - (Timely Upgrade , Security issues ,server goed down)
+<b>problems</b>-
+
+- Timely Upgrade
+- Security issues
+- Server goed down
 
 <h3>Types of EC2 Instances -</h3>
-1- General purpose
-2- Compute Optimized
-3- Memory Optimized
-4- Storage Optimized
-5- Accelarted Optimized
+- General purpose
+- Compute Optimized
+- Memory Optimized
+- Storage Optimized
+- Accelarted Optimized
+
+<b>To change permission of the file</b>
 
 ```bash
-<b>Chmod 600</b> - To change permission of the file
+Chmod 600
+```
 chmod stand for "change mode"
-
 6 set read and write permissionfor the owner of the file
 0 set no permissionfor the grps or others
-```
+
 
 <b>For doing SSH -</b>
 
 ```bash
 ssh -i "key" ubuntu@"public_ip"
 ```
-<h3>Linux Commands</h3>
-For update - <b>sudo apt update</b>
-Switch to root user -<b> sudo su -</b>
-For logut <b>logout</b>
-For update in root user - <b>apt update</b>
+
+
+<b>For update </b>
+
+```bash
+sudo apt update
+```
+
+<b>Switch to root user </b>
+
+```bash
+sudo su -
+```
+
+<b>For logut</b> 
+
+```bash
+logout
+```
+
+<b>For update in root user</b> 
+
+```bash
+apt update
+```
+
+
+
+
+
 
 <hr>
 <h3>VPC - Virtual Private Cloud </h3>
