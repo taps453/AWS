@@ -23,6 +23,7 @@
 - Server goed down
 
 <h3>Types of EC2 Instances -</h3>
+
 - General purpose
 - Compute Optimized
 - Memory Optimized
