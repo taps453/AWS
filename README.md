@@ -1,213 +1,203 @@
-<h3>Type of cloud - </h3>
-<li>Public</li>
-<li>Private</li>
-<li>Hybrid</li>
+<div align="center">
 
-<hr>
+<img src="https://img.shields.io/badge/AWS-Cloud%20Services-%23232F3E?style=for-the-badge" alt="AWS"/>
+<br>
+<h1>☁️🚀 AWS Quick Reference 🚀☁️</h1>
+</div>
 
-<h3>AWS IAM </h3> Identity and access management - For Authentication and Authoritation
+---
 
-- Users
-- Policies
-- Groups
-- Roles - created for temparory purpose
+## 🌐 Type of Cloud
+- ☁️ Public
+- 🔒 Private
+- 🌗 Hybrid
 
-<hr>
+---
 
-<h3>AWS EC2 (Elastic Cloud Compute)</h3>
+## 🛡️ AWS IAM
+**Identity and Access Management** (Authentication & Authorization)
 
-<b>problems</b>-
+- 👤 Users
+- 📜 Policies
+- 👥 Groups
+- 🎭 Roles (Temporary Purpose)
 
-- Timely Upgrade
-- Security issues
-- Server goed down
+---
 
-<h3>Types of EC2 Instances -</h3>
+## 🖥️ AWS EC2 (Elastic Cloud Compute)
 
-- General purpose
-- Compute Optimized
-- Memory Optimized
-- Storage Optimized
-- Accelarted Optimized
+**Problems:**
+- ⏰ Timely Upgrade
+- 🛡️ Security Issues
+- ⚠️ Server Goes Down
 
-<b>To change permission of the file</b>
+### 🖥️ Types of EC2 Instances
+- 🟦 General Purpose
+- 🟥 Compute Optimized
+- 🟩 Memory Optimized
+- 🟨 Storage Optimized
+- 🟪 Accelerated Optimized
 
+**To change permission of the file:**
 ```bash
-Chmod 600
+chmod 600
 ```
+- `chmod`: change mode  
+- `6`: read & write for owner  
+- `0`: no permissions for group/others
 
-chmod stand for "change mode"
-6 set read and write permissionfor the owner of the file
-0 set no permissionfor the grps or others
-
-
-<b>For doing SSH -</b>
-
+**For SSH:**
 ```bash
 ssh -i "key" ubuntu@"public_ip"
 ```
 
-
-<b>For update </b>
-
+**For Update:**
 ```bash
 sudo apt update
 ```
 
-<b>Switch to root user </b>
-
+**Switch to Root User:**
 ```bash
 sudo su -
 ```
 
-<b>For logut</b> 
-
+**For Logout:**
 ```bash
 logout
 ```
 
-<b>For update in root user</b> 
-
+**For Update in Root User:**
 ```bash
 apt update
 ```
 
+---
 
-<hr>
+## 🕸️ VPC (Virtual Private Cloud)
+A secure, isolated private cloud hosted within a public cloud.
 
-<h3>VPC - Virtual Private Cloud </h3>
- VPC is a secure, isolated private cloud hosted within a public cloud.
+- 📶 Subnets: Range of IPs in your VPC (must reside in single AZ)
+- 🚀 Deploy AWS resources after adding subnets
 
-<p>The VPC has one subnet in each of the Availability Zones in the Region, EC2 instances in each subnet, 
-and an internet gateway to allow communication between the resources in your VPC and the internet.</p>
+**Request Route:**  
+🌐 Internet Gateway → 🟦 Public Subnet → 🛡️ Load Balancer → 🛣️ Route Table → 🔒 Security Group → 💻 Application
 
-<b>Subnets</b> :- A subnet is a range of IP addresses in your VPC. A subnet must reside in a single Availability Zone.
-After you add subnets, you can deploy AWS resources in your VPC.
+- 🎭 NAT: Masks outgoing IP address
+- 📊 VPC Flow Log: Security group at EC2 level
+  - 🔼 Inbound traffic
+  - 🔽 Outbound traffic
 
-<b>Request route </b>- internet gateway ==> public subnet ==>load balancer ==> route table ==> security grp ==>Application
+_Default Security Group:_  
+✅ Allows all outbound except port 25 (mail)  
+⛔ Denies all inbound
 
-<b>NAT</b> -  it mask ur outgoing ip address.
+**NACL (Network Access Control List):**
+- 🛡️ Optional firewall at subnet level (first layer of defense)
 
-<b>VPC Flowlog - </b>
+---
 
-Security grp added at EC2 instance level.
-<span>1- Inbound traffic</span>
-<span>2- Outbound traffic</span>
+## 🌍 Route 53
+**DNS (Domain Name Service)**  
+- 🌐 Maps domain name with IP address
 
-<p>Default security grp allow all outbound traffic expect port 25(mail service).</p>
-<p>Default security grp denies all inbound traffic.</p>
+- 📝 Domain Registration
+- 🔄 DNS Routing
+- ❤️‍🩹 Health Checking: Automated requests to verify resource availability
 
-<b>NACL - Network access control list</b>
-<p>optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.</p>
+_Generally, DNS maps to Load Balancer IP_
 
-<b>NACL added at the subnet level.</b>
-<p>NACL is act as first level of defence.If u block something at nacl level then it will not work if it allowd at security grps level.</p>
- 
-<hr>
+---
 
-<h3>Route 53</h3>  
-<b>DNS[Domain name service] - maps domain name with ip address</b>
+## 🛡️ Accessing Private Subnet
+- 🕵️‍♂️ Use "Bastion-Host" to connect
 
-- Domain registration
-- DNS routing
-- Health checking -Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functiona</span>
- 
-<b>In gerneral - DNS maps with Load balancer IP address</b>
+---
 
-<hr>
+## ⚖️ Load Balancer Types
+- 📱 Application Load Balancer
+- 🌐 Network Load Balancer
+- 🚪 Gateway Load Balancer
 
-- For connecting to a private subnet server we can use "bastion-host"
-<hr>
+---
 
-<h3>Load balancer </h3>
+## 🔁 NAT Gateway (Network Address Translation)
+Allows private subnet instances to connect outward only.
 
-- Application Load balancer</span>
-- Network load balancer</span>
-- Gateway load balancer</span>
+- 🤝 VPC Peering: Communicate between different private subnet instances
+- 🚦 Strict Network Access: NACL at subnet level
+- 🛣️ VPC Endpoint: Securely access AWS services within VPC (S3, DynamoDB)
 
-<hr>
+---
 
-<h3>NAT Gateway - Network address translation</h3>
-<p>You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.</p>
+## 🗄️ AWS S3 (Simple Storage Service)
 
-<p><b>VPC peering </b>- use for communication between 2 private different subnet instance.</p>
+**Advantages:**
+- 📶 Availability & Durability
+- 📈 Scalability
+- 🛡️ Security
+- 💸 Cost Effective
+- ⚡ Performance
 
-<p>Strict network access for VPC - Using NACL(at subnet level)</p>
+**Security:**
+- 🪣 Bucket Policies
+- 🔒 Access Control
+- 🗝️ Encryption
 
-<p><b>VPC endpoint</b> - securely access aws services within the VPC.(S3 ,DynamoDb)</p>
-<hr>
+**Storage Classes:**
+- 🟦 S3 Standard (least access time)
+- 🟩 S3 Standard-IA
+- 🟨 One Zone-IA
+- ❄️ S3 Glacier
+- 🚀 S3 Glacier Instant Retrieval
+- 🔄 S3 Glacier Flexible Retrieval
+- 🕳️ S3 Glacier Deep Archive
+- 🏢 S3 Outposts
+- 🧠 S3 Intelligent Tiering
 
-<h3>AWS S3 - Simple storage service</h3>
+---
 
-<b>Advantage </b>
+## 🏗️ IAC (Infrastructure as Code)
+- 🐍 AWS CLI (Python Utility)
+- 🌱 Terraform
+- 🏗️ Cloud Formation
+- 🛠️ CDK
 
-- Availability and Durability
-- Scalability
-- Security
-- Cost Effective
-- Performance
-
-<b>Security</b>
-
-- Bucket policies
-- Access control
-- Encryption
-
-<b>Storage Class</b>
-
-- S3 Standard (least access time)
-- S3 Standard-IA
-- One Zone-IA
-- S3 Glacier
-- S3 Glacier Instant Retrieval
-- S3 Glacier Flexible Retrieval
-- S3 Glacier Deep Archive
-- S3 Outposts
-- S3 Intelligent Tiering
-
-<hr>
-
-<h3>IAC - Infracture as a code</h3> 
-
-- AWS CLI (Python utility)
-- Terraform
-- Cloud Formation
-- CDK
-
-
-### AWS CLI - use only for quick and short action
-
+### AWS CLI (Quick Actions)
 ```bash
 aws configure
 ```
-
 ```bash
 aws s3 ls
 ```
 
-<h3>AWS CFT - Cloud formation template (Infrastructure as code-Ias)</h3>
+---
 
-- use to create lagre infrastructuer in aws.
-- act as a middle man b/w cloud and user.
-- CFT support Json and YMAL template.
-- Convert templates into a API calls.
+## 🏗️ AWS CFT (Cloud Formation Template, IaC)
+- Build large infrastructure in AWS
+- Middleman between cloud and user
+- Supports JSON & YAML templates
+- Converts templates to API calls
 
-### CFT template writing style
+**Template Style:**
+- 📝 Declarative
+- 🗂️ Versioned
 
-- Declarative 
-- Versioned
- 
-### CFT job -
+**CFT Job:**
+- 🏗️ Creating Infra
+- 🕵️ Drift Detection (detect config changes outside CloudFormation)
 
-- Creating Infra
-- Drift Detection - configuration changes were made to your stack resources outside of CloudFormation via the AWS Management Console, CLI, and SDKs.
-- Drift is the difference between the expected configuration values of stack resources defined in CloudFormation templates and the actual configuration values of these resources in the corresponding CloudFormation stacks.
-<hr>
+---
 
-<h3>AWS Code Commit :</h3>
+## 🔗 AWS DevOps Services
+- 🗃️ AWS Code Commit
+- 🛠️ AWS Code Pipeline
+- 🏗️ AWS CodeBuild
+- 🚀 AWS Code Deploy
 
-<h3>AWS Code Pipeline :</h3>
+---
 
-<h3>AWS Codebuild :</h3>
-
-<h3>AWS Code deploy :</h3>
+<div align="center">
+  <sub>
+    Made with ❤️ by taps453
+  </sub>
+</div>
